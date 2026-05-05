@@ -56,5 +56,5 @@ VALUES (5, 6, 5, "2026-10-02", "Pendente");
 
 "Migrando tabela RESERVAS" 
 INSERT INTO Bootcamp_Accenture.usuarios_new (id, nome, email, endereco, data_nasc)
-SELECT id, nome, email, data_nasc
+SELECT id, nome, email,endereco, data_nasc
 	FROM usuarios;
