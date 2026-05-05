@@ -1,3 +1,11 @@
+CREATE TABLE Bootcamp_Accenture.usuarios(
+    id INT,
+    nome VARCHAR(255) NOT NULL COMMENT 'Nome do usuario',
+    email VARCHAR(100) NOT NULL UNIQUE COMMENT 'E-mail do usuario',
+    endereco VARCHAR(100) NOT NULL COMMENT 'Endereço do usuário',
+    data_nasc DATE NOT NULL COMMENT 'Data de Nascimento do usuario'
+);
+
 CREATE TABLE Bootcamp_Accenture.destinos(
     id INT,
     nome VARCHAR(255) NOT NULL COMMENT 'Nome do destino',
