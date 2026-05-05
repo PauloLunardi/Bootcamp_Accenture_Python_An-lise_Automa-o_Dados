@@ -54,3 +54,7 @@ VALUES (4, 5, 4, "2026-09-20", "Confirmada");
 INSERT INTO Bootcamp_Accenture.reservas(id, id_usuario, id_destino, data, status) 
 VALUES (5, 6, 5, "2026-10-02", "Pendente");
 
+"Migrando tabela RESERVAS" 
+INSERT INTO Bootcamp_Accenture.usuarios_new (id, nome, email, endereco, data_nasc)
+SELECT id, nome, email, data_nasc
+	FROM usuarios;
