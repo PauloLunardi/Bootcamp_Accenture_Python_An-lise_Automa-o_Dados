@@ -17,6 +17,12 @@ Aplicar conceitos de análise de dados e automação em cenários práticos, com
 
 Observações ⚠️
 
+Cloud Clusters
+  https://clients.cloudclusters.io/
+    Utilizando como nuvem e host do banco.
+    Utilizado o MariaDB e executando os comandos SQL pelo phpMyAdmin para criação das tabelas.
+
+
 Projetos voltados para aprendizado e evolução técnica.
 
 Meu LinkedIn: https://www.linkedin.com/in/paulo-lunardi-b82516b2/
