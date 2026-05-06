@@ -19,3 +19,14 @@ ADD CONSTRAINT fk_reservas_destinos
 FOREIGN KEY (id_destino) REFERENCES Bootcamp_Accenture.destinos(id);
 
 -- alterar as FKs adicionando Cascade (delete e update)
+ALTER TABLE Bootcamp_Accenture.reservas
+ADD CONSTRAINT fk_reservas_usuarios
+FOREIGN KEY (id_usuario) REFERENCES Bootcamp_Accenture.usuarios(id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+ALTER TABLE Bootcamp_Accenture.reservas
+ADD CONSTRAINT fk_reservas_destinos
+FOREIGN KEY (id_destino) REFERENCES Bootcamp_Accenture.destinos(id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
