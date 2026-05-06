@@ -30,3 +30,20 @@ ADD CONSTRAINT fk_reservas_destinos
 FOREIGN KEY (id_destino) REFERENCES Bootcamp_Accenture.destinos(id)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
+
+"Remodelando os campos da tabela usuarios"
+-- Adicionando e removendo campos.
+  -- Sugestão: usar id_endereco_user e criar uma outra tabela para armazenar as infomações de endereço vinculado pelo id
+ALTER TABLE usuarios
+	ADD rua VARCHAR(100),
+	ADD numero VARCHAR(10),
+  ADD cidade VARCHAR(50),
+  ADD estado VARCHAR(20),
+	DROP COLUMN endereco;
+
+-- Correção do nome "estado" que tinha ficado em caixa alta
+ALTER TABLE Bootcamp_Accenture.usuarios CHANGE ESTADO estado VARCHAR(20);
+-- ou use
+ALTER TABLE Bootcamp_Accenture.usuarios RENAME COLUMN ESTADO TO estado;
+
+
