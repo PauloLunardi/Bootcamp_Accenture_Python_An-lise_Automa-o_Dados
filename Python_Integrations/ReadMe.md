@@ -17,3 +17,10 @@ O que são dados externos?
     - ler os dados
     - processar informações
     - salvar novos resultados
+
+🔄 Diferença entre dump e dumps
+
+      json.dump(obj, arquivo) → grava direto no arquivo.
+      json.dumps(obj) → retorna uma string JSON que você pode imprimir ou manipular, mas não salva no arquivo.
+      
+      resumindo: json.dump pega um objeto Python e escreve no arquivo em formato JSON.
