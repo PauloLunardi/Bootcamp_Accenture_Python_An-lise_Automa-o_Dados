@@ -8,6 +8,6 @@ dados = [
   ["Maria", "28", "Belo Horizonte"]
 ]
 
-with open("pessoas.csv", "w", LEWLINE="") as arquivo:
+with open("pessoas.csv", "w", newline="") as arquivo:
   writer = csv.writer(arquivo)
   writer.writerows(dados)
