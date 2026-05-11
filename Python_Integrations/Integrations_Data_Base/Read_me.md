@@ -11,13 +11,13 @@ Um bando de dados te permite:
 
     Aqui no curso sera utilizado o SQLite
 
-## Explicativos sobre comandos 
+### Explicativos sobre comandos 
 
-  commit() → serve para confirmar alterações (INSERT, UPDATE, DELETE, CREATE, DROP).
+    commit() → serve para confirmar alterações (INSERT, UPDATE, DELETE, CREATE, DROP).
   
-  close() → fecha a conexão e libera o arquivo do banco.
+    close() → fecha a conexão e libera o arquivo do banco.
   
-  cursor.close() → encerra o cursor explicitamente (boa prática, mas não obrigatório).
+    cursor.close() → encerra o cursor explicitamente (boa prática, mas não obrigatório).
 
 ## Diferença entre fetchall() e iterar direto no cursor
 
