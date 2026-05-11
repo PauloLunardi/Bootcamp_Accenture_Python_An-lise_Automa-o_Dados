@@ -10,3 +10,7 @@ cursor.execute(
     "INSERT INTO usuarios_vip VALUES (?, ?)",
     ("Lunardi", 37)
 )
+
+conexao.commit()
+cursor.close()
+conexao.close()
