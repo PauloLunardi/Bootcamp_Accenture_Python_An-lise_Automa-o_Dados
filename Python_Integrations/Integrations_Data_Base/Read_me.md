@@ -10,3 +10,11 @@ Um bando de dados te permite:
 Em Python pode se usar diversos bancos de dados.
 
 Aqui no curso sera utilizado o SQLite
+
+Explicativos sobre comandos 
+
+  commit() → serve para confirmar alterações (INSERT, UPDATE, DELETE, CREATE, DROP).
+  
+  close() → fecha a conexão e libera o arquivo do banco.
+  
+  cursor.close() → encerra o cursor explicitamente (boa prática, mas não obrigatório).
