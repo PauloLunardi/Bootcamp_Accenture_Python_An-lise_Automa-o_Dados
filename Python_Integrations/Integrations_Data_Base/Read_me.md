@@ -1,101 +1,180 @@
-Integração com SQLite em Python
+# Integração com SQLite em Python
 
 Além de transformar dados obtidos em API em arquivos, podemos também armazenar em bancos de dados.
 
-Um banco de dados te permite:
+Um banco de dados permite:
 
-Armazenar grandes volumes de informações
+- Armazenar grandes volumes de informações
+- Organizar dados em tabelas
+- Consultar dados rapidamente
 
-Organizar dados em tabelas
+Em Python podem ser usados diversos bancos de dados.  
+Aqui no curso será utilizado o **SQLite**, que é leve, simples e não precisa de servidor.
 
-Consultar dados rapidamente
+---
 
-Em Python podem ser usados diversos bancos de dados. Aqui no curso será utilizado o SQLite, que é leve, simples e não precisa de servidor.
+# Comandos importantes
 
-📌 Comandos importantes
+## `commit()`
 
-commit() → confirma alterações (INSERT, UPDATE, DELETE, CREATE, DROP).
+Confirma alterações realizadas no banco de dados.
 
-close() → fecha a conexão e libera o arquivo do banco.
+Usado após comandos como:
 
-cursor.close() → encerra o cursor explicitamente (boa prática, mas não obrigatório).
+- INSERT
+- UPDATE
+- DELETE
+- CREATE
+- DROP
 
-Diferença entre modos de leitura
+Exemplo:
 
-1. fetchall()
+```python
+conexao.commit()
+```
 
+---
+
+## `close()`
+
+Fecha a conexão com o banco e libera o arquivo.
+
+Exemplo:
+
+```python
+conexao.close()
+```
+
+---
+
+## `cursor.close()`
+
+Encerra o cursor explicitamente.
+
+Boa prática, mas não obrigatório.
+
+Exemplo:
+
+```python
+cursor.close()
+```
+
+---
+
+# Diferença entre modos de leitura
+
+## 1. `fetchall()`
+
+```python
 cursor.execute("SELECT * FROM usuarios_vip")
+
 dados = cursor.fetchall()
+
 print(dados)
+```
 
 Os dados são carregados todos de uma vez em memória e retornados como uma lista de tuplas.
 
-Vantagem: simples de usar, você já tem todos os resultados disponíveis.
+### ✅ Vantagens
 
-Desvantagem: se a tabela tiver milhares ou milhões de registros, pode consumir muita memória.
+- Simples de usar
+- Todos os resultados ficam disponíveis imediatamente
 
-2. Iterar direto no cursor
+### ❌ Desvantagens
 
+- Pode consumir muita memória em tabelas grandes
+
+---
+
+## 2. Iterar diretamente no cursor
+
+```python
 cursor.execute("SELECT * FROM usuarios_vip")
+
 for linha in cursor:
     print(linha)
+```
 
-O cursor vai entregando linha por linha conforme você percorre.
+O cursor entrega os dados linha por linha conforme a iteração acontece.
 
-Vantagem: mais eficiente em consultas grandes, porque não precisa carregar tudo de uma vez.
+### ✅ Vantagens
 
-Desvantagem: só percorre uma vez; se quiser manipular depois, precisa salvar manualmente.
+- Mais eficiente para grandes volumes de dados
+- Não carrega tudo em memória
 
-3. fetchmany(n)
+### ❌ Desvantagens
 
+- O cursor só pode ser percorrido uma vez
+- Se quiser reutilizar os dados, precisa armazená-los manualmente
+
+---
+
+## 3. `fetchmany(n)`
+
+```python
 cursor.execute("SELECT * FROM usuarios_vip")
-for bloco in cursor.fetchmany(2):  # lê 2 registros por vez
+
+for bloco in cursor.fetchmany(2):
     print(bloco)
+```
 
 Os dados são lidos em blocos de N linhas por vez.
 
-Vantagem: equilíbrio entre simplicidade e eficiência, útil para tabelas grandes.
+### ✅ Vantagens
 
-Desvantagem: exige definir o tamanho do bloco e controlar a iteração.
+- Equilíbrio entre desempenho e simplicidade
+- Bom para tabelas grandes
 
-📊 Comparativo dos métodos
+### ❌ Desvantagens
 
-Método
+- Necessário definir o tamanho do bloco
+- Exige mais controle da leitura
 
-Como funciona
+---
 
-Vantagem principal
+# Comparativo dos métodos
 
-Desvantagem principal
+| Método | Como funciona | Vantagem principal | Desvantagem principal |
+|---|---|---|---|
+| `fetchall()` | Carrega todas as linhas em memória | Simples e ótimo para tabelas pequenas | Pode consumir muita memória |
+| Iteração no cursor | Lê linha por linha diretamente | Mais eficiente para tabelas grandes | Só percorre uma vez |
+| `fetchmany(n)` | Lê blocos de N linhas por vez | Controle sobre quantidade lida | Precisa definir o tamanho do bloco |
 
-fetchall
+---
 
-Carrega todas as linhas em memória
+# Conclusão
 
-Simples, ótimo para tabelas pequenas
+## Quando usar `fetchall()`
 
-Pode pesar em tabelas grandes
+Use quando:
 
-Iteração no cursor
+- a tabela for pequena
+- você precisar de todos os dados de uma vez
 
-Lê linha por linha diretamente
+---
 
-Mais eficiente em tabelas grandes
+## Quando iterar diretamente no cursor
 
-Só percorre uma vez
+Use quando:
 
-fetchmany(n)
+- estiver trabalhando com tabelas grandes
+- quiser economizar memória
 
-Lê blocos de N linhas por vez
+---
 
-Controle sobre quantidade lida
+## Quando usar `fetchmany(n)`
 
-Precisa definir tamanho do bloco
+Use quando:
 
-📖 Conclusão
+- precisar de um meio-termo
+- quiser controlar quantas linhas serão carregadas por vez
 
-Use fetchall para tabelas pequenas ou quando quiser todos os dados de uma vez.
+---
 
-Use iterar no cursor para tabelas grandes, evitando sobrecarga de memória.
+# Resumo Final
 
-Use fetchmany quando precisar de um meio-termo, controlando quantas linhas são lidas por vez.
+| Situação | Método recomendado |
+|---|---|
+| Poucos dados | `fetchall()` |
+| Muitos dados | Iteração no cursor |
+| Controle de blocos | `fetchmany(n)` |
