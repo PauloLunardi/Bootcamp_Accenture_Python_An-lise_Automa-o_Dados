@@ -39,13 +39,24 @@ Esta pasta reúne exemplos e explicações sobre as bibliotecas essenciais do Py
 
 ---
 
-## ⚙️ Estrutura dos exemplos
-Cada arquivo contém:
-- Importação da biblioteca.  
-- Demonstração de funções principais.  
-- Comentários explicativos para facilitar o estudo.  
+## ⚙️ Introdução às bibliotecas de dados
+Python possui muitas bibliotecas para trabalhar com dados.
 
----
+  ### As três bibliotecas mais utilizadas são:
+- NumPy - computação numérica e arrays.  
+- Pandas - Manipulação de dados em tabelas.  
+- Matplotlib - criação de gráficos.  
+
+## ⚙️ O que é NumPy?
+Numpy é uma biblioteca usada para trabalhar com arrays e operações matemática eficientes.
+Ela é muito mais rápida que listas comuns do Python para operarações numéricas.
+
+## ⚙️ O que é Pandas?
+Pandas é usado para manipular dados estruturados, como tabelas.
+A principal estrutura de dados é o DataFrame, que funciona como uma planilha.
+
+## ⚙️ O que é Matplotlib?
+Matplotlib é uma biblioteca usada pareea criar graficos e visualizações de dados.
 
 ## 📖 Conclusão
 Essas bibliotecas são a base para trabalhar com **arquivos, sistema operacional, cálculos, datas e formatos de dados**.  
