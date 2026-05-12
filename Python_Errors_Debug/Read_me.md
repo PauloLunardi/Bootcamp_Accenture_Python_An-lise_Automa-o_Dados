@@ -122,3 +122,15 @@ Em sistemas reais usamos logs para registrar eventos do sistema.
     logging.debug('Menagem de debug')
     logging.info('Mensagem de warning')
     logging.error('Mensagem de erro')
+
+## Monitoramento de scripts
+    
+ ### Logs ajudam a:
+    - Identificar erros
+    - Entender o funcionamento do sistema
+    - Monitorar scripts automatizados
+
+## Boas Práticas
+
+## Prevenção de erros
+    Sempre que possivel devemos prevenir erros antes que aconteçam.
