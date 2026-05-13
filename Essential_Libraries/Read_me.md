@@ -55,6 +55,27 @@ Ela é muito mais rápida que listas comuns do Python para operarações numéri
 Pandas é usado para manipular dados estruturados, como tabelas.
 A principal estrutura de dados é o DataFrame, que funciona como uma planilha.
 
+### Resumo do df.describe() em Pandas
+  O método `df.describe()` gera estatísticas descritivas para colunas numéricas do DataFrame.  
+  
+####Exemplo de saída para a coluna **preco**:
+
+    | Métrica | Explicação |
+    |---------|------------|
+    | **count** | Número de valores não nulos (quantos registros foram considerados). |
+    | **mean** | Média aritmética dos valores. |
+    | **std** | Desvio padrão, mostra a dispersão dos dados em relação à média. |
+    | **min** | Valor mínimo encontrado na coluna. |
+    | **25%** | Primeiro quartil (25% dos dados estão abaixo deste valor). |
+    | **50%** | Mediana (metade dos dados estão abaixo e metade acima). |
+    | **75%** | Terceiro quartil (75% dos dados estão abaixo deste valor). |
+    | **max** | Valor máximo encontrado na coluna. |
+
+### 📖 Conclusão
+- `df.describe()` é útil para ter uma visão rápida da distribuição dos dados.  
+- Ele mostra **tendência central** (mean, median), **dispersão** (std, quartis) e **extremos** (min, max).  
+- Ideal para análise exploratória inicial de datasets numéricos.
+
 ## ⚙️ O que é Matplotlib?
 Matplotlib é uma biblioteca usada pareea criar graficos e visualizações de dados.
 
