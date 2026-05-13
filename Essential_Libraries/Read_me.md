@@ -71,7 +71,6 @@ A principal estrutura de dados é o DataFrame, que funciona como uma planilha.
     | **75%** | Terceiro quartil (75% dos dados estão abaixo deste valor). |
     | **max** | Valor máximo encontrado na coluna. |
 
-### 📖 Conclusão
 - `df.describe()` é útil para ter uma visão rápida da distribuição dos dados.  
 - Ele mostra **tendência central** (mean, median), **dispersão** (std, quartis) e **extremos** (min, max).  
 - Ideal para análise exploratória inicial de datasets numéricos.
