@@ -58,7 +58,7 @@ A principal estrutura de dados é o DataFrame, que funciona como uma planilha.
 ### Resumo do df.describe() em Pandas
   O método `df.describe()` gera estatísticas descritivas para colunas numéricas do DataFrame.  
   
-####Exemplo de saída para a coluna **preco**:
+#### Exemplo de saída para a coluna **preco**:
 
     | Métrica | Explicação |
     |---------|------------|
