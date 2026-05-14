@@ -75,6 +75,14 @@ A principal estrutura de dados é o DataFrame, que funciona como uma planilha.
 - Ele mostra **tendência central** (mean, median), **dispersão** (std, quartis) e **extremos** (min, max).  
 - Ideal para análise exploratória inicial de datasets numéricos.
 
+### Problemas comuns em datasets
+Alguns problemas mais comuns são:
+    
+    - Valores ausentes
+    - Dados duplicados
+    - Valores inconsistentes
+    - Formatos incorretos
+
 ## ⚙️ O que é Matplotlib?
 Matplotlib é uma biblioteca usada pareea criar graficos e visualizações de dados.
 
