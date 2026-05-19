@@ -57,6 +57,19 @@ O método `df.info()` fornece uma visão geral rápida da estrutura do DataFrame
       - Tipos de dados
       - Consistência
 
-### Remoção de valores ausentes
+### Remoção de valores ausentes NaN
+#### Tratamento de valores ausentes – Cabin
+
+Nesta etapa, a coluna **Cabin** foi ajustada para lidar com os registros ausentes (NaN).  
+Como mais de 75% dos valores estavam faltando, optamos por uma abordagem **simplista e transparente**:  
+substituir todos os valores ausentes por `"Unknown"`.  
+
+```python
+# Substitui valores ausentes (NaN) da coluna "Cabin" por "Unknown"
+df["Cabin"] = df["Cabin"].fillna("Unknown")
+
+# Verifica novamente se ainda existem valores ausentes
+print(df.isnull().sum())
+
 
       
