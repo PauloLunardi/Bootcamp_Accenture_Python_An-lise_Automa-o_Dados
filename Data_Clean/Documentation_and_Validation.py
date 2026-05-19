@@ -1,15 +1,12 @@
-Documentação e Validação
+# Documentação e Validação
 
-Reprodutibilidade
-  Uma análise deve ser reproduzível.
+def validar_dataset(df):
 
-  Isso significa que qualquer pessoa deve conseguir:
-    - Executar o código
-    - Obter os mesmos resultados
+  print("Linhas:", df.shape[0])
+  print("Colunas:", df.shape[1])
+  print("\nValores Ausentes:")
 
-Validação de Datasets
+  print(df.isnull().sum())
 
-  Antes de usar um dataset, devemos verificar:
-    - Valores ausentes
-    - Tipos de dados
-    - Consistência
+# executar após definição de validar_dataset criada acima
+# validar_dataset(df) 
