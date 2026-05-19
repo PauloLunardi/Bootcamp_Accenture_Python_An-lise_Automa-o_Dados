@@ -99,5 +99,10 @@ Com as etapas documentadas, o dataset agora está:
   - Mais consistente e confiável para análises.  
   - Pronto para ser utilizado em estudos exploratórios ou em modelos de machine learning.  
 
+## Notebook de Execução
 
+Este repositório contém o notebook com o histórico de execução realizado no Google Colab.  
+Você pode abrir e executar diretamente no Colab clicando no botão abaixo:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DGVmcNVBcVGzI7mwbriHT_njZkc6GEIh?usp=sharing)
 
