@@ -70,6 +70,3 @@ df["Cabin"] = df["Cabin"].fillna("Unknown")
 
 # Verifica novamente se ainda existem valores ausentes
 print(df.isnull().sum())
-
-
-      
