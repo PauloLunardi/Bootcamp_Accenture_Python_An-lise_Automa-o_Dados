@@ -41,7 +41,7 @@ O método `df.info()` fornece uma visão geral rápida da estrutura do DataFrame
 
 ### Tratamento de valores ausentes
   #### NaN significa NOT a Number.
-  Ele representa valores ausentes ou desconhecidos em um dataset.
+    Ele representa valores ausentes ou desconhecidos em um dataset.
 
 ### Documentação e Validação
   #### Reprodutibilidade
