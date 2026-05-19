@@ -44,15 +44,14 @@ O método `df.info()` fornece uma visão geral rápida da estrutura do DataFrame
   Ele representa valores ausentes ou desconhecidos em um dataset.
 
 ### Documentação e Validação
-#### Reprodutibilidade
+  #### Reprodutibilidade
   Uma análise deve ser reproduzível.
 
     Isso significa que qualquer pessoa deve conseguir:
       - Executar o código
       - Obter os mesmos resultados
 
-#### Validação de Datasets
-
+  #### Validação de Datasets
     Antes de usar um dataset, devemos verificar:
       - Valores ausentes
       - Tipos de dados
