@@ -31,7 +31,7 @@ O método `df.info()` fornece uma visão geral rápida da estrutura do DataFrame
   - **Memory usage** → estimativa da memória ocupada pelo DataFrame.
 
 #### Entendimento
-    - `df.info()` é útil para entender rapidamente:
+  `df.info()` é útil para entender rapidamente:
     - Quantidade de registros e colunas.  
     - Presença de valores nulos.  
     - Tipos de dados de cada coluna.  
