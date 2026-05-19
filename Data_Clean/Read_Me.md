@@ -39,4 +39,10 @@ O método `df.info()` fornece uma visão geral rápida da estrutura do DataFrame
     
     Ideal para análise exploratória inicial antes de manipular os dados.
 
+### Tratamento de valores ausentes
+  #### NaN significa NOT a Number.
+  Ele representa valores ausentes ou desconhecidos em um dataset.
+
+### Remoção de valores ausentes
+
       
