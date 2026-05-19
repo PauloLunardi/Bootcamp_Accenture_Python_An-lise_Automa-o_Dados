@@ -21,7 +21,6 @@ Antes de analisar dados, precisamos garantir que eles possuem boa qualidade.
 O método `df.info()` fornece uma visão geral rápida da estrutura do DataFrame.
 
 #### Informações retornadas
-
   - **Classe do objeto** → mostra que é um `pandas.core.frame.DataFrame`.  
   - **RangeIndex** → quantidade de linhas e intervalo de índices.  
   - **Colunas** → lista das colunas com:
