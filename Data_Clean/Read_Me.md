@@ -99,5 +99,5 @@ Com as etapas documentadas, o dataset agora está:
   - Mais consistente e confiável para análises.  
   - Pronto para ser utilizado em estudos exploratórios ou em modelos de machine learning.  
 
-👉 Essa organização por tópicos e subtópicos (`###` e `####`) facilita a leitura e deixa claro o fluxo de operações realizadas.
+
 
