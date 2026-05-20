@@ -12,13 +12,12 @@ Isso permite:
     - Processar grandes volumes de dados
 
 ### Cenários reais de automação
-
-A automação é usada em várias áreas:
-    - Geração automática de relatórios.
-    - Coleta de dados na internet.
-    - Processamento diário de arquivos.
-    - Atualização de bancos de dados.
-    - Monitoramento de 
+    A automação é usada em várias áreas:
+        - Geração automática de relatórios.
+        - Coleta de dados na internet.
+        - Processamento diário de arquivos.
+        - Atualização de bancos de dados.
+        - Monitoramento de Sistemas.
 
 Python é muito usado para automação por ser simples e poderoso.
 
@@ -26,11 +25,10 @@ Python é muito usado para automação por ser simples e poderoso.
 
 ### Processamento automático de arquivos
 Uma das automações mais comuns é processar arquivos automaticamente.
-
-Por exemplo:
-    - Ler arquivos de dados
-    - Calcular métricas
-    - Gerar relátórios
+    Por exemplo:
+        - Ler arquivos de dados
+        - Calcular métricas
+        - Gerar relátórios
 
 ## Integração com APIs e Bancos
 
