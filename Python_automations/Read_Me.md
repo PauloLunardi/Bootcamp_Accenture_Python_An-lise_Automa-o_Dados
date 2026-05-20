@@ -23,7 +23,6 @@ Isso permite:
 Python é muito usado para automação por ser simples e poderoso.
 
 ## Manipulação automatizada de arquivos
-
 ### Processamento automático de arquivos
 Uma das automações mais comuns é processar arquivos automaticamente.
 #### Por exemplo:
