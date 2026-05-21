@@ -18,8 +18,6 @@ Isso permite:
 
 Python é uma das linguagens mais utilizadas para automação devido à sua simplicidade, legibilidade e vasta quantidade de bibliotecas.
 
----
-
 ### Cenários reais de automação
 
 #### A automação é utilizada em diversas áreas:
@@ -56,8 +54,6 @@ Com Python podemos:
 - Gerar novos arquivos
 - Processar grandes volumes de dados
 
----
-
 ### Exemplos de automação com arquivos
 
 #### Por exemplo:
@@ -69,8 +65,6 @@ Com Python podemos:
 - Organizar arquivos em pastas
 - Renomear arquivos em massa
 - Criar backups automáticos
-
----
 
 ### Bibliotecas utilizadas
 
@@ -100,8 +94,6 @@ Com APIs podemos:
 - Integrar sistemas
 - Automatizar consultas
 
----
-
 ### Exemplos de uso de APIs
 
 #### Algumas aplicações comuns:
@@ -111,8 +103,6 @@ Com APIs podemos:
 - Consumir APIs de redes sociais
 - Integrar sistemas empresariais
 - Consultar dados financeiros
-
----
 
 ### Integração com bancos de dados
 
@@ -149,8 +139,6 @@ Com ele podemos:
 - Remover informações
 - Realizar consultas
 
----
-
 ### Exemplo de criação de tabela
 
 ```python
@@ -173,8 +161,6 @@ conexao.commit()
 
 conexao.close()
 ```
-
----
 
 ### Explicação do exemplo
 
@@ -201,13 +187,9 @@ Isso permite:
 - Atualizar relatórios automaticamente
 - Monitorar sistemas continuamente
 
----
-
 ### Cron Jobs
 
 Em sistemas Linux utilizamos cron jobs para agendar tarefas automáticas.
-
----
 
 ### Exemplo de agendamento
 
@@ -216,8 +198,6 @@ Em sistemas Linux utilizamos cron jobs para agendar tarefas automáticas.
 ```bash
 0 8 * * * python scheduled_script.py
 ```
-
----
 
 ### Fluxo real de automação
 
@@ -228,8 +208,6 @@ Em sistemas Linux utilizamos cron jobs para agendar tarefas automáticas.
 3. Configurar o cron job no servidor
 4. Monitorar execuções automáticas
 5. Registrar logs de execução
-
----
 
 ### Exemplo prático
 
@@ -247,11 +225,9 @@ python scheduled_script.py
 
 O sistema executará automaticamente o script todos os dias às 08:00.
 
----
+### Monitoramento
 
-## Monitoramento
-
-### Importância do monitoramento
+#### Importância do monitoramento
 
 Quando automatizamos processos, precisamos acompanhar se os scripts estão funcionando corretamente.
 
@@ -261,8 +237,6 @@ O monitoramento permite:
 - Evitar falhas em processos críticos
 - Garantir estabilidade da automação
 - Registrar execuções
-
----
 
 ### Logs
 
@@ -274,8 +248,6 @@ Logs registram:
 - Erros encontrados
 - Processos concluídos
 - Informações importantes do sistema
-
----
 
 ### Exemplo simples de log
 
@@ -292,8 +264,6 @@ with open("log.txt", "a") as arquivo:
 
 Um pipeline de dados é um processo automatizado que executa várias etapas de processamento de informações.
 
----
-
 ### Etapas de um pipeline
 
 #### Normalmente um pipeline executa:
@@ -304,8 +274,6 @@ Um pipeline de dados é um processo automatizado que executa várias etapas de p
 4. Armazenamento dos dados
 5. Análise dos dados
 6. Geração de insights e resultados
-
----
 
 ### Onde pipelines são utilizados
 
@@ -318,8 +286,6 @@ Pipelines são muito utilizados em:
 - Sistemas corporativos
 - Machine Learning
 
----
-
 ### Exemplo de pipeline automatizado
 
 #### Fluxo simplificado:
@@ -329,8 +295,6 @@ Pipelines são muito utilizados em:
 3. Armazenar em banco SQLite
 4. Gerar relatório automático
 5. Agendar execução diária
-
----
 
 ### Benefícios de pipelines automatizados
 
