@@ -56,6 +56,21 @@ Em sistemas Linux utilizamos cron jobs para agendar tarefas.
 Quando automatizamos processos, precisamos monitorar se os scripts estão funcionando corretamente.
 Uma forma comum de fazer isso é usando logs.
 
+## Projeto prátiuco de Automação
+
+### O que é um pipeline de dados?
+Um pipeline de dados é um processo automatizado que executa vátias etapas:
+    1. Coleta de dados
+    2. Processamento dos dados
+    3. Análise dos dados
+    4. Geração de inside e resultados
+
+Pipelines são muito utilizados em:
+    * Analise de dados
+    * Engenharia de dados
+    * Relatórios automáticos
+
+
 
 
 
