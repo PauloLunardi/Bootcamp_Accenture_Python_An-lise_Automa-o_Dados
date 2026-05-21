@@ -8,4 +8,6 @@ conm.commit()
 print("Usuarios inseridos no banco de dados")
 
 cursor.close()
+print("Conexão com o banco encerrada")
+
 conm.close()
