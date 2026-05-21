@@ -51,23 +51,17 @@ Ela permite criar:
 
 É considerada a base da visualização de dados em Python.
 
----
-
 ### Instalação
 
 ```bash
 pip install matplotlib
 ```
 
----
-
 ### Importação
 
 ```python
 import matplotlib.pyplot as plt
 ```
-
----
 
 ### Exemplo simples
 
@@ -81,8 +75,6 @@ plt.plot(x, y)
 
 plt.show()
 ```
-
----
 
 ### Principais funções
 
@@ -112,23 +104,17 @@ Seu foco é criar gráficos:
 
 É muito utilizada em análise exploratória de dados.
 
----
-
 ### Instalação
 
 ```bash
 pip install seaborn
 ```
 
----
-
 ### Importação
 
 ```python
 import seaborn as sns
 ```
-
----
 
 ### Exemplo simples
 
@@ -143,8 +129,6 @@ sns.lineplot(x=[1, 2, 3, 4], y=dados)
 plt.show()
 ```
 
----
-
 ### Gráficos populares no Seaborn
 
 - `lineplot()`
@@ -153,8 +137,6 @@ plt.show()
 - `boxplot()`
 - `heatmap()`
 - `pairplot()`
-
----
 
 ### Vantagens do Seaborn
 
@@ -185,23 +167,17 @@ Muito utilizado em:
 - Ciência de Dados
 - Aplicações analíticas
 
----
-
 ### Instalação
 
 ```bash
 pip install plotly
 ```
 
----
-
 ### Importação
 
 ```python
 import plotly.express as px
 ```
-
----
 
 ### Exemplo simples
 
@@ -216,8 +192,6 @@ grafico = px.line(
 grafico.show()
 ```
 
----
-
 ### Recursos do Plotly
 
 - Interatividade
@@ -227,7 +201,6 @@ grafico.show()
 - Dashboards
 - Integração Web
 
----
 
 ## Comparação entre bibliotecas
 
@@ -249,8 +222,6 @@ Utilizado para:
 - Séries temporais
 - Evolução de dados
 
----
-
 ### Gráfico de barras
 
 Utilizado para:
@@ -258,8 +229,6 @@ Utilizado para:
 - Comparações
 - Rankings
 - Categorias
-
----
 
 ### Histograma
 
@@ -269,8 +238,6 @@ Utilizado para:
 - Frequência
 - Análise estatística
 
----
-
 ### Scatter Plot
 
 Utilizado para:
@@ -278,7 +245,6 @@ Utilizado para:
 - Correlação
 - Relação entre variáveis
 - Identificação de padrões
-
 ---
 
 ## Personalização de gráficos
@@ -294,8 +260,6 @@ Podemos personalizar:
 - Tamanho da figura
 - Estilo visual
 
----
-
 ### Exemplo de personalização
 
 ```python
@@ -305,7 +269,6 @@ plt.xlabel("Meses")
 
 plt.ylabel("Vendas")
 ```
-
 ---
 
 ## Integração com Pandas
