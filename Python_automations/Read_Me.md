@@ -40,10 +40,21 @@ Em sistemas reais, scripts podem ser executados automaticamente em horários esp
 
 ### Cron Jobs
 Em sistemas Linux utilizamos cron jobs para agendar tarefas.
-    
-#### Exemplo:
-    Executar um script todos os dias ás 8h:
 
+    Exemplo:
+        Executar um script todos os dias ás 8h:
+
+#### Fluxo real de automação:
+1 - Criar o script Python (ex: scheduled.script.py)
+2 - adicionar um Cron Job no servidor(caso use Linux)
+
+    Exemplo de cron job:
+        08****python scheduled.script.py
+3 - O sistema executará o script automaticamente todos os dias ás 08:00.
+
+#### Monitoramento
+Quando automatizamos processos, precisamos monitorar se os scripts estão funcionando corretamente.
+Uma forma comum de fazer isso é usando logs.
 
 
 
