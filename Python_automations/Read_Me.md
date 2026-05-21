@@ -34,6 +34,12 @@ Uma das automações mais comuns é processar arquivos automaticamente.
 
 ## criação de tabelas  utilizando cursor
 
+## Agendamentos de Tarefas
+### Script Programados
+Em sistemas reais, scripts podem ser executados automaticamente em horários especifícos.
+
+### Cron Jobs
+
 
 
 
