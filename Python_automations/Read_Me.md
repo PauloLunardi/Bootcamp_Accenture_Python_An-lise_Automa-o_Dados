@@ -32,6 +32,10 @@ Uma das automações mais comuns é processar arquivos automaticamente.
 
 ## Integração com APIs e Bancos
 
+## criação de tabelas  utilizando cursor
+
+
+
 
 
 
