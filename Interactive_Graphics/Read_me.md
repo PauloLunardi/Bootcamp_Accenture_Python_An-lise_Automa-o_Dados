@@ -315,6 +315,17 @@ Os dados podem ser utilizados diretamente nos gráficos.
 
 ---
 
+## Storytelling com dados
+Storytelling com dados significa usar visualizações para contar uma história.
+O objetivo não é apenas mostrar gráficos, mas comunicar insights.
+
+Um bom sttorytelling deve:
+    * Mostrar o contexto
+    * destacar padrões
+    * explicar os resultados
+
+---
+
 ## Conclusão
 
 A visualização de dados é fundamental para transformar informações em análises compreensíveis.
