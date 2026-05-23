@@ -22,6 +22,11 @@ Cloud Clusters
     Utilizando como nuvem e host do banco.
     Utilizado o MariaDB e executando os comandos SQL pelo phpMyAdmin para criação das tabelas.
 
+Python
+  https://colab.research.google.com/
+    Utilizando como (depurador Python)
+    - Temas e historico estão salvos dentro das pastas Interative_Graphics e Data_Clean
+
 
 Projetos voltados para aprendizado e evolução técnica.
 
