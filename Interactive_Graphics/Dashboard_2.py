@@ -17,7 +17,7 @@ plt.tight_layout()
 plt.show()
 
 # Observação:
-# Este script depende do dataset "tips.csv" disponível no repositório seaborn.py.
+# Este script depende do dataset "tips.csv" disponível no repositório Import_Dataset.py.
 # Para garantir que os gráficos funcionem mesmo após reiniciar a sessão,
 # é necessário carregar novamente os dados com pandas:
 #
