@@ -25,7 +25,7 @@ Cloud Clusters
 Python
   https://colab.research.google.com/
     Utilizando como (depurador Python)
-    - Temas e historico estão salvos dentro das pastas Interative_Graphics e Data_Clean
+    - Temas e historico estão salvos dentro das pastas [Interative_Graphics](./Interative_Graphics) e [Data_Clean](./Data_Clean)
 
 
 Projetos voltados para aprendizado e evolução técnica.
