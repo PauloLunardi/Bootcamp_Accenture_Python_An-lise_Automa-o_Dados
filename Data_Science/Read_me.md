@@ -200,6 +200,34 @@ y_pred = np.array([110, 190, 290, 410])
 mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
 print("MAPE:", mape)
 ```
+## Coeficiente de Determinação
+
+O **Coeficiente de Determinação (R²)** é uma métrica usada para avaliar modelos de regressão.  
+Ele indica a proporção da variabilidade dos dados que é explicada pelo modelo.
+
+#### Fórmula Simplificada
+R² = 1 - (SS_res / SS_tot)
+
+- **SS_res** → soma dos quadrados dos resíduos: Σ (yᵢ - ŷᵢ)²  
+- **SS_tot** → soma dos quadrados totais: Σ (yᵢ - ȳ)²  
+- yᵢ → valor real da observação i  
+- ŷᵢ → valor previsto pelo modelo  
+- ȳ → média dos valores reais  
+
+#### Interpretação
+- R² varia entre **0 e 1** (embora possa ser negativo em alguns casos).  
+- **R² = 0** → o modelo não explica nenhuma variabilidade dos dados.  
+- **R² = 1** → o modelo explica toda a variabilidade dos dados (ajuste perfeito).  
+- Valores intermediários mostram o quanto o modelo consegue capturar da variação dos dados.  
+
+#### Exemplo em Python
+```python
+from sklearn.metrics import r2_score
+
+# Cálculo do R² entre valores reais (y_test) e previstos (y_pred)
+r2 = r2_score(y_test, y_pred)
+print("R²:", r2)
+```
 
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
