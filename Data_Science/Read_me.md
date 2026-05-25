@@ -140,6 +140,34 @@ from sklearn.metrics import mean_squared_error
 mse = mean_squared_error(y_test, y_pred)
 print("MSE:", mse)
 ```
+### Root Mean Squared Error
+O **Root Mean Squared Error (RMSE)** é uma métrica usada para avaliar modelos de regressão.  
+Ele é a raiz quadrada do **Mean Squared Error (MSE)** e traz o erro médio para a mesma escala dos dados originais.
+
+#### Fórmula Simplificada
+RMSE = √( (1 / n) * Σ (yᵢ - ŷᵢ)² )
+
+- n → número de observações  
+- yᵢ → valor real da observação i  
+- ŷᵢ → valor previsto pelo modelo para a observação i  
+- (yᵢ - ŷᵢ)² → erro ao quadrado da previsão  
+
+#### Interpretação
+- O RMSE indica, em média, o tamanho dos erros de previsão na **mesma unidade da variável alvo**.  
+- Quanto menor o RMSE, melhor o desempenho do modelo.  
+- Por ser derivado do MSE, ainda penaliza erros grandes, mas é mais fácil de interpretar porque está na escala dos dados.
+
+#### Exemplo em Python
+```python
+from sklearn.metrics import mean_squared_error
+import numpy as np
+
+# Cálculo do RMSE entre valores reais (y_test) e previstos (y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+
+print("RMSE:", rmse)
+````
 
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
