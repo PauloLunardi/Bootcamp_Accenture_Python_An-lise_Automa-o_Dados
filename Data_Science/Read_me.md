@@ -114,7 +114,7 @@ y_pred = [2.5, 0.0, 2, 8]
 mae = mean_absolute_error(y_true, y_pred)
 print("MAE:", mae)
 ```
-## Mean Squared Error
+### Mean Squared Error
 O **Mean Squared Error (MSE)** é uma métrica usada para avaliar modelos de regressão.  
 Ele calcula a média dos erros ao quadrado entre os valores previstos (\(\hat{y}_i\)) e os valores reais (\(y_i\)).
 
