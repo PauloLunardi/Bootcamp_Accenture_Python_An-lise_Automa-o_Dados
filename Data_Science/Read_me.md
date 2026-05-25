@@ -168,6 +168,37 @@ rmse = np.sqrt(mse)
 
 print("RMSE:", rmse)
 ````
+### Definição
+O **Mean Absolute Percentage Error (MAPE)** é uma métrica usada para avaliar modelos de regressão.  
+Ele mede o erro absoluto médio em termos percentuais, ou seja, mostra em média **quanto o modelo erra em relação ao valor real**.
+
+#### Fórmula Simplificada
+MAPE = (100 / n) * Σ ( |yᵢ - ŷᵢ| / |yᵢ| )
+
+- n → número de observações  
+- yᵢ → valor real da observação i  
+- ŷᵢ → valor previsto pelo modelo para a observação i  
+- |yᵢ - ŷᵢ| → erro absoluto da previsão  
+- |yᵢ| → valor real usado como referência para calcular a porcentagem  
+
+#### Interpretação
+- O MAPE indica o erro médio percentual das previsões.  
+- Exemplo: MAPE = 8 → significa que, em média, o modelo erra **8%** em relação ao valor real.  
+- Quanto menor o MAPE, melhor o desempenho do modelo.  
+- Atenção: se algum valor real \(yᵢ\) for zero, o MAPE pode ficar indefinido ou distorcido.
+
+#### Exemplo em Python
+```python
+import numpy as np
+
+# Valores reais e previstos
+y_true = np.array([100, 200, 300, 400])
+y_pred = np.array([110, 190, 290, 410])
+
+# Cálculo do MAPE
+mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+print("MAPE:", mape)
+```
 
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
