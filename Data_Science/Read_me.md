@@ -18,35 +18,67 @@ A avaliação correta garante que o modelo não apenas se ajuste bem ao conjunto
 
 ---
 
-## Análise de Erro vs Resíduo
+# Análise de Erro vs Resíduo
 
-### Definições
-- **Erro (\(e_i\))**: diferença entre o valor previsto pelo modelo (\(\hat{y}_i\)) e o valor real (\(y_i\)).  
-  
+## Definições
 
-\[
-  e_i = \hat{y}_i - y_i
-  \]
+- **Erro (\(e_i\))**: diferença entre o valor previsto pelo modelo (\(\hat{y}_i\)) e o valor real (\(y_i\)):
 
+$$
+e_i = \hat{y}_i - y_i
+$$
 
+- **Resíduo (\(r_i\))**: diferença entre o valor observado (\(y_i\)) e o valor ajustado pelo modelo (\(\hat{y}_i\)):
 
-- **Resíduo (\(r_i\))**: diferença entre o valor observado (\(y_i\)) e o valor ajustado pelo modelo (\(\hat{y}_i\)).  
-  
+$$
+r_i = y_i - \hat{y}_i
+$$
 
-\[
-  r_i = y_i - \hat{y}_i
-  \]
-
-
-
-👉 Note que **erro e resíduo são numericamente iguais, mas com sinais opostos**.  
+👉 Note que **erro e resíduo são numericamente iguais, mas com sinais opostos**:
 - O **erro** é visto do ponto de vista da previsão.  
 - O **resíduo** é visto do ponto de vista da observação.
 
-### Interpretação
+---
+
+## Interpretação
+
 - Resíduos próximos de zero indicam bom ajuste.  
 - Resíduos sistematicamente positivos ou negativos podem indicar **viés** no modelo.  
 - A análise gráfica dos resíduos ajuda a identificar problemas como **heterocedasticidade** ou **não linearidade**.
+
+---
+
+## Exemplo em Python
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Dados fictícios
+X = np.array([[1],[2],[3],[4],[5]])
+y = np.array([1.2, 1.9, 3.1, 3.9, 5.2])
+
+# Modelo
+model = LinearRegression()
+model.fit(X, y)
+y_pred = model.predict(X)
+
+# Cálculo de erros e resíduos
+erro = y_pred - y
+residuo = y - y_pred
+
+print("Erro:", erro)
+print("Resíduo:", residuo)
+
+# Plot dos resíduos
+plt.scatter(X, residuo)
+plt.axhline(y=0, color="red", linestyle="--")
+plt.title("Análise de Resíduos")
+plt.xlabel("X")
+plt.ylabel("Resíduo")
+plt.show()
+
 
 ---
 
