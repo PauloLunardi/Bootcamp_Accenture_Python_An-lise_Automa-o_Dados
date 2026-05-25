@@ -14,16 +14,23 @@ Em projetos Python que envolvem **bancos de dados** ou **automações**, separar
 Uma organização simples pode ser feita assim:
 
 |
+|-src/
+||-main.py
+||-utils.py
+||-banco/
+|||--conexao.py
+|||--consultas.py
+||-automacao/
+|||--emails.py
+|||--tarefas.py
+|
+|-config/         # arquivos de configuração
+|-data/           # dados brutos ou processados
+|-logs/           # registros de execução
+|-tests/          # testes automatizados
+|-docs/           # documentação detalhada
+|-README.md
 
-| -src/                # pasta principal do código
-
-| |-main.py            # ponto de entrada do programa
-
-| |-utils.py           # funções auxiliares e utilitários
-
-| |-banco.py           # funções de conexão e manipulação de banco de dados
-
-| |-automacao.py       # scripts de automação (envio de e-mails, tarefas recorrentes)
 
 
 ## Exemplo prático
