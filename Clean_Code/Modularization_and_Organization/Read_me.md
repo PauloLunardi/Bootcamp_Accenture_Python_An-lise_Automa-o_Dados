@@ -15,15 +15,15 @@ Uma organização simples pode ser feita assim:
 
 |
 
-|-src/                # pasta principal do código
+| -src/                # pasta principal do código
 
-||-main.py            # ponto de entrada do programa
+| |-main.py            # ponto de entrada do programa
 
-||-utils.py           # funções auxiliares e utilitários
+| |-utils.py           # funções auxiliares e utilitários
 
-||-banco.py           # funções de conexão e manipulação de banco de dados
+| |-banco.py           # funções de conexão e manipulação de banco de dados
 
-||-automacao.py       # scripts de automação (envio de e-mails, tarefas recorrentes)
+| |-automacao.py       # scripts de automação (envio de e-mails, tarefas recorrentes)
 
 
 ## Exemplo prático
