@@ -4,8 +4,6 @@
 As **métricas de avaliação** são fundamentais para medir a qualidade e a performance de modelos em ciência de dados.  
 Cada tipo de modelo (regressão, classificação ou agrupamento) exige métricas específicas que refletem sua capacidade de generalização e precisão.
 
----
-
 ## Explicação de Modelos em Ciência de Dados
 Um modelo de **ciência de dados** é uma representação matemática ou estatística que busca aprender padrões a partir dos dados.  
 A avaliação correta garante que o modelo não apenas se ajuste bem ao conjunto de treino, mas também seja capaz de generalizar para novos dados.
@@ -38,15 +36,11 @@ $$
 - O **erro** é visto do ponto de vista da previsão.  
 - O **resíduo** é visto do ponto de vista da observação.
 
----
-
 ## Interpretação
 
 - Resíduos próximos de zero indicam bom ajuste.  
 - Resíduos sistematicamente positivos ou negativos podem indicar **viés** no modelo.  
 - A análise gráfica dos resíduos ajuda a identificar problemas como **heterocedasticidade** ou **não linearidade**.
-
----
 
 ## Exemplo em Python
 
@@ -78,9 +72,7 @@ plt.title("Análise de Resíduos")
 plt.xlabel("X")
 plt.ylabel("Resíduo")
 plt.show()
-
-
----
+```
 
 ## Métricas de Modelos de Regressão
 Modelos de regressão buscam prever valores contínuos.  
@@ -88,9 +80,40 @@ Principais métricas:
 - **[MAE](ca://s?q=MAE_em_regressao)** (*Mean Absolute Error*): média dos erros absolutos.  
 - **[MSE](ca://s?q=MSE_em_regressao)** (*Mean Squared Error*): penaliza erros grandes ao elevar ao quadrado.  
 - **[RMSE](ca://s?q=RMSE_em_regressao)** (*Root Mean Squared Error*): raiz quadrada do MSE, mais interpretável.  
-- **[R²](ca://s?q=R2_em_regressao)** (*Coeficiente de Determinação*): indica proporção da variância explicada pelo modelo.  
+- **[R²](ca://s?q=R2_em_regressao)** (*Coeficiente de Determinação*): indica proporção da variância explicada pelo modelo.
 
----
+### Mean Absolute Error
+O **Mean Absolute Error (MAE)** é uma métrica usada para avaliar modelos de regressão.  
+Ele mede a média dos erros absolutos entre os valores previstos (\(\hat{y}_i\)) e os valores reais (\(y_i\)).
+
+#### Fórmula
+
+\[
+MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\]
+
+- \(n\): número de observações  
+- \(y_i\): valor real da observação \(i\)  
+- \(\hat{y}_i\): valor previsto pelo modelo para a observação \(i\)  
+- \(|y_i - \hat{y}_i|\): erro absoluto da previsão  
+
+#### Interpretação
+- O MAE indica **quanto, em média, as previsões se afastam dos valores reais**.  
+- Quanto menor o MAE, melhor o desempenho do modelo.  
+- É uma métrica **robusta** porque não eleva os erros ao quadrado (diferente do MSE), sendo menos sensível a outliers.  
+
+#### Exemplo em Python
+```python
+from sklearn.metrics import mean_absolute_error
+
+# Suponha valores reais e previstos
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2, 8]
+
+# Cálculo do MAE
+mae = mean_absolute_error(y_true, y_pred)
+print("MAE:", mae)
+```
 
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
@@ -102,8 +125,6 @@ Principais métricas:
 - **[Matriz de Confusão](ca://s?q=Matriz_de_confusao_em_classificacao)**  
 - **[ROC e AUC](ca://s?q=ROC_e_AUC_em_classificacao)**  
 
----
-
 ## Métricas de Modelos de Agrupamento
 Modelos de agrupamento (clustering) buscam identificar grupos sem rótulos prévios.  
 Principais métricas:
@@ -111,8 +132,6 @@ Principais métricas:
 - **[Davies-Bouldin Index](ca://s?q=Davies_Bouldin_index_em_agrupamento)**  
 - **[Calinski-Harabasz Index](ca://s?q=Calinski_Harabasz_index_em_agrupamento)**  
 - **[Inércia](ca://s?q=Inercia_em_agrupamento)**  
-
----
 
 ## Conclusão
 A escolha da métrica correta depende do tipo de modelo e do objetivo da análise.  
