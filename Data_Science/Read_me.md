@@ -168,7 +168,8 @@ rmse = np.sqrt(mse)
 
 print("RMSE:", rmse)
 ````
-### Definição
+### Mean Absolute Percentage Error
+
 O **Mean Absolute Percentage Error (MAPE)** é uma métrica usada para avaliar modelos de regressão.  
 Ele mede o erro absoluto médio em termos percentuais, ou seja, mostra em média **quanto o modelo erra em relação ao valor real**.
 
