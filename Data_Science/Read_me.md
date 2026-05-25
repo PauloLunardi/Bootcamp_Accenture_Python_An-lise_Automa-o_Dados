@@ -11,10 +11,42 @@ Um modelo de **ciência de dados** é uma representação matemática ou estatí
 A avaliação correta garante que o modelo não apenas se ajuste bem ao conjunto de treino, mas também seja capaz de generalizar para novos dados.
 
 ### Conceitos importantes
-- **[Overfitting](ca://s?q=Overfitting_em_modelos_de_ciencia_de_dados)**: ocorre quando o modelo aprende demais os detalhes e ruídos dos dados de treino, perdendo capacidade de generalização.  
-- **[Underfitting](ca://s?q=Underfitting_em_modelos_de_ciencia_de_dados)**: acontece quando o modelo é muito simples e não consegue capturar os padrões relevantes dos dados.  
+- **[Overfitting](ca://s?q=Overfitting_em_modelos_de_ciencia_de_dados)**: quando o modelo aprende demais os detalhes e ruídos dos dados de treino, perdendo capacidade de generalização.  
+- **[Underfitting](ca://s?q=Underfitting_em_modelos_de_ciencia_de_dados)**: quando o modelo é muito simples e não consegue capturar os padrões relevantes dos dados.  
 - **[Bias e Variância](ca://s?q=Bias_e_variancia_em_modelos)**: equilíbrio entre simplicidade e complexidade do modelo.  
 - **[Validação](ca://s?q=Validacao_de_modelos_em_ciencia_de_dados)**: uso de dados de teste ou validação cruzada para medir desempenho real.  
+
+---
+
+## Análise de Erro vs Resíduo
+
+### Definições
+- **Erro (\(e_i\))**: diferença entre o valor previsto pelo modelo (\(\hat{y}_i\)) e o valor real (\(y_i\)).  
+  
+
+\[
+  e_i = \hat{y}_i - y_i
+  \]
+
+
+
+- **Resíduo (\(r_i\))**: diferença entre o valor observado (\(y_i\)) e o valor ajustado pelo modelo (\(\hat{y}_i\)).  
+  
+
+\[
+  r_i = y_i - \hat{y}_i
+  \]
+
+
+
+👉 Note que **erro e resíduo são numericamente iguais, mas com sinais opostos**.  
+- O **erro** é visto do ponto de vista da previsão.  
+- O **resíduo** é visto do ponto de vista da observação.
+
+### Interpretação
+- Resíduos próximos de zero indicam bom ajuste.  
+- Resíduos sistematicamente positivos ou negativos podem indicar **viés** no modelo.  
+- A análise gráfica dos resíduos ajuda a identificar problemas como **heterocedasticidade** ou **não linearidade**.
 
 ---
 
@@ -31,26 +63,25 @@ Principais métricas:
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
 Principais métricas:
-- **[Acurácia](ca://s?q=Acuracia_em_classificacao)**: proporção de acertos totais.  
-- **[Precisão](ca://s?q=Precisao_em_classificacao)**: proporção de positivos corretos entre os previstos.  
-- **[Recall](ca://s?q=Recall_em_classificacao)**: proporção de positivos corretos entre os reais.  
-- **[F1-Score](ca://s?q=F1_score_em_classificacao)**: média harmônica entre precisão e recall.  
-- **[Matriz de Confusão](ca://s?q=Matriz_de_confusao_em_classificacao)**: tabela que mostra acertos e erros por classe.  
-- **[ROC e AUC](ca://s?q=ROC_e_AUC_em_classificacao)**: curvas que avaliam desempenho em diferentes limiares.  
+- **[Acurácia](ca://s?q=Acuracia_em_classificacao)**  
+- **[Precisão](ca://s?q=Precisao_em_classificacao)**  
+- **[Recall](ca://s?q=Recall_em_classificacao)**  
+- **[F1-Score](ca://s?q=F1_score_em_classificacao)**  
+- **[Matriz de Confusão](ca://s?q=Matriz_de_confusao_em_classificacao)**  
+- **[ROC e AUC](ca://s?q=ROC_e_AUC_em_classificacao)**  
 
 ---
 
 ## Métricas de Modelos de Agrupamento
 Modelos de agrupamento (clustering) buscam identificar grupos sem rótulos prévios.  
 Principais métricas:
-- **[Silhouette Score](ca://s?q=Silhouette_score_em_agrupamento)**: mede a separação e coesão dos clusters.  
-- **[Davies-Bouldin Index](ca://s?q=Davies_Bouldin_index_em_agrupamento)**: avalia a similaridade entre clusters.  
-- **[Calinski-Harabasz Index](ca://s?q=Calinski_Harabasz_index_em_agrupamento)**: mede a dispersão intra e inter-cluster.  
-- **[Inércia](ca://s?q=Inercia_em_agrupamento)**: soma das distâncias dos pontos ao centro do cluster.  
+- **[Silhouette Score](ca://s?q=Silhouette_score_em_agrupamento)**  
+- **[Davies-Bouldin Index](ca://s?q=Davies_Bouldin_index_em_agrupamento)**  
+- **[Calinski-Harabasz Index](ca://s?q=Calinski_Harabasz_index_em_agrupamento)**  
+- **[Inércia](ca://s?q=Inercia_em_agrupamento)**  
 
 ---
 
 ## Conclusão
 A escolha da métrica correta depende do tipo de modelo e do objetivo da análise.  
-Avaliar bem é tão importante quanto treinar bem: métricas garantem que o modelo seja útil, confiável e aplicável em cenários reais.  
-Além disso, entender **Overfitting** e **Underfitting** ajuda a interpretar se o modelo está equilibrado entre complexidade e generalização.
+Além disso, a **análise de erro vs resíduo** é essencial para interpretar o ajuste do modelo e identificar possíveis problemas de generalização.
