@@ -114,6 +114,32 @@ y_pred = [2.5, 0.0, 2, 8]
 mae = mean_absolute_error(y_true, y_pred)
 print("MAE:", mae)
 ```
+## Mean Squared Error
+O **Mean Squared Error (MSE)** é uma métrica usada para avaliar modelos de regressão.  
+Ele calcula a média dos erros ao quadrado entre os valores previstos (\(\hat{y}_i\)) e os valores reais (\(y_i\)).
+
+#### Fórmula Simplificada
+MSE = (1 / n) * Σ (yᵢ - ŷᵢ)²
+
+- n → número de observações  
+- yᵢ → valor real da observação i  
+- ŷᵢ → valor previsto pelo modelo para a observação i  
+- (yᵢ - ŷᵢ)² → erro ao quadrado da previsão
+
+#### Interpretação
+- O MSE indica **quanto, em média, os erros quadráticos se afastam dos valores reais**.  
+- Quanto menor o MSE, melhor o desempenho do modelo.  
+- Penaliza mais fortemente erros grandes, pois cada diferença é elevada ao quadrado.  
+- É útil quando queremos destacar desvios grandes que não podem ser ignorados.
+
+#### Exemplo em Python
+```python
+from sklearn.metrics import mean_squared_error
+
+# Cálculo do MSE entre valores reais (y_test) e previstos (y_pred)
+mse = mean_squared_error(y_test, y_pred)
+print("MSE:", mse)
+```
 
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
