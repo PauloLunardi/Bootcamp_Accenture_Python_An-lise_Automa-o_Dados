@@ -22,13 +22,13 @@ A avaliação correta garante que o modelo não apenas se ajuste bem ao conjunto
 
 ## Definições
 
-- **Erro (\(e_i\))**: diferença entre o valor previsto pelo modelo (\(\hat{y}_i\)) e o valor real (\(y_i\)):
+- **Erro (\(e_i\))**: diferença entre o valor previsto pelo modelo e o valor real:
 
 $$
 e_i = \hat{y}_i - y_i
 $$
 
-- **Resíduo (\(r_i\))**: diferença entre o valor observado (\(y_i\)) e o valor ajustado pelo modelo (\(\hat{y}_i\)):
+- **Resíduo (\(r_i\))**: diferença entre o valor observado e o valor ajustado pelo modelo:
 
 $$
 r_i = y_i - \hat{y}_i
