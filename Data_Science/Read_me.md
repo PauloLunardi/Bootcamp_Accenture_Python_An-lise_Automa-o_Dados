@@ -10,17 +10,17 @@ Cada tipo de modelo (regressão, classificação ou agrupamento) exige métricas
 Um modelo de **ciência de dados** é uma representação matemática ou estatística que busca aprender padrões a partir dos dados.  
 A avaliação correta garante que o modelo não apenas se ajuste bem ao conjunto de treino, mas também seja capaz de generalizar para novos dados.
 
-Principais pontos:
-- **[Validação](ca://s?q=Validacao_de_modelos_em_ciencia_de_dados)**: uso de dados de teste ou validação cruzada.  
-- **[Overfitting](ca://s?q=Overfitting_em_modelos_de_ciencia_de_dados)**: quando o modelo aprende demais os dados de treino e perde capacidade de generalização.  
+### Conceitos importantes
+- **[Overfitting](ca://s?q=Overfitting_em_modelos_de_ciencia_de_dados)**: ocorre quando o modelo aprende demais os detalhes e ruídos dos dados de treino, perdendo capacidade de generalização.  
+- **[Underfitting](ca://s?q=Underfitting_em_modelos_de_ciencia_de_dados)**: acontece quando o modelo é muito simples e não consegue capturar os padrões relevantes dos dados.  
 - **[Bias e Variância](ca://s?q=Bias_e_variancia_em_modelos)**: equilíbrio entre simplicidade e complexidade do modelo.  
+- **[Validação](ca://s?q=Validacao_de_modelos_em_ciencia_de_dados)**: uso de dados de teste ou validação cruzada para medir desempenho real.  
 
 ---
 
 ## Métricas de Modelos de Regressão
 Modelos de regressão buscam prever valores contínuos.  
 Principais métricas:
-
 - **[MAE](ca://s?q=MAE_em_regressao)** (*Mean Absolute Error*): média dos erros absolutos.  
 - **[MSE](ca://s?q=MSE_em_regressao)** (*Mean Squared Error*): penaliza erros grandes ao elevar ao quadrado.  
 - **[RMSE](ca://s?q=RMSE_em_regressao)** (*Root Mean Squared Error*): raiz quadrada do MSE, mais interpretável.  
@@ -31,7 +31,6 @@ Principais métricas:
 ## Métricas de Modelos de Classificação
 Modelos de classificação buscam prever categorias.  
 Principais métricas:
-
 - **[Acurácia](ca://s?q=Acuracia_em_classificacao)**: proporção de acertos totais.  
 - **[Precisão](ca://s?q=Precisao_em_classificacao)**: proporção de positivos corretos entre os previstos.  
 - **[Recall](ca://s?q=Recall_em_classificacao)**: proporção de positivos corretos entre os reais.  
@@ -44,7 +43,6 @@ Principais métricas:
 ## Métricas de Modelos de Agrupamento
 Modelos de agrupamento (clustering) buscam identificar grupos sem rótulos prévios.  
 Principais métricas:
-
 - **[Silhouette Score](ca://s?q=Silhouette_score_em_agrupamento)**: mede a separação e coesão dos clusters.  
 - **[Davies-Bouldin Index](ca://s?q=Davies_Bouldin_index_em_agrupamento)**: avalia a similaridade entre clusters.  
 - **[Calinski-Harabasz Index](ca://s?q=Calinski_Harabasz_index_em_agrupamento)**: mede a dispersão intra e inter-cluster.  
@@ -54,4 +52,5 @@ Principais métricas:
 
 ## Conclusão
 A escolha da métrica correta depende do tipo de modelo e do objetivo da análise.  
-Avaliar bem é tão importante quanto treinar bem: métricas garantem que o modelo seja útil, confiável e aplicável em cenários reais.
+Avaliar bem é tão importante quanto treinar bem: métricas garantem que o modelo seja útil, confiável e aplicável em cenários reais.  
+Além disso, entender **Overfitting** e **Underfitting** ajuda a interpretar se o modelo está equilibrado entre complexidade e generalização.
