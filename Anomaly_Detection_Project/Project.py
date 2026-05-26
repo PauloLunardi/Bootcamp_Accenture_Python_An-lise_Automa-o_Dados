@@ -2,47 +2,58 @@
 # Projeto de Machine Learning com Dados de Futebol
 # ============================================
 
-# 1. Importação e análise inicial
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, roc_curve, roc_auc_score, precision_recall_curve
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
 from xgboost import XGBClassifier
-from sklearn.model_selection import GridSearchCV
-import shap
-import matplotlib.pyplot as plt
 from imblearn.over_sampling import SMOTE
+import shap
 
-# Carregar dataset (exemplo fictício de futebol)
-df = pd.read_csv("matches.csv")  # substitua pelo dataset real
+# 1. Importação do dataset diretamente do GitHub
+url = "https://raw.githubusercontent.com/martj42/international_results/master/results.csv"
+df = pd.read_csv(url)
 
 print(df.head())
-print(df["target"].value_counts())  # verificar desbalanceamento
 
-# 2. Feature Engineering
-df["goal_diff"] = df["home_goals"] - df["away_goals"]
-df["is_home_win"] = (df["goal_diff"] > 0).astype(int)
+# 2. Variável alvo (resultado do jogo)
+df["is_home_win"] = (df["home_score"] > df["away_score"]).astype(int)
 
-# Definir X e y
-X = df[["home_goals", "away_goals", "goal_diff"]]
+# 3. Features pré-jogo (não usar placar!)
+X = df[["neutral", "tournament", "home_team", "away_team"]]
+
+# Converter booleano para inteiro
+X["neutral"] = X["neutral"].astype(int)
+
+# Transformar variáveis categóricas em dummies
+X = pd.get_dummies(X, drop_first=True)
+
 y = df["is_home_win"]
 
-# 3. Preparação dos dados
+# 4. Divisão treino/teste (70% treino, 30% teste)
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# 4. Regressão Logística
-log_reg = LogisticRegression(max_iter=1000)
-log_reg.fit(x_train, y_train)
-y_pred = log_reg.predict(x_test)
-print("=== Logistic Regression Report ===")
+# 5. Pipeline com Regressão Logística
+pipeline = Pipeline([
+    ("imputer", SimpleImputer(strategy="most_frequent")),  # trata NaN
+    ("scaler", StandardScaler(with_mean=False)),           # padroniza
+    ("model", LogisticRegression(max_iter=1000))
+])
+
+pipeline.fit(x_train, y_train)
+y_pred = pipeline.predict(x_test)
+
+print("=== Pipeline Logistic Regression Report ===")
 print(classification_report(y_test, y_pred))
 
-# 5. Curvas de avaliação
-y_probs = log_reg.predict_proba(x_test)[:,1]
+# 6. Curvas de avaliação
+y_probs = pipeline.predict_proba(x_test)[:,1]
 
 fpr, tpr, _ = roc_curve(y_test, y_probs)
 plt.plot(fpr, tpr)
@@ -59,42 +70,20 @@ plt.xlabel("Recall")
 plt.ylabel("Precision")
 plt.show()
 
-# 6. Balanceamento
-# Undersampling
-fraudes = df[df["is_home_win"] == 1]
-normais = df[df["is_home_win"] == 0].sample(len(fraudes), random_state=42)
-df_under = pd.concat([fraudes, normais])
+# 7. Balanceamento com SMOTE
+smote = SMOTE(random_state=42)
+x_train_res, y_train_res = smote.fit_resample(x_train, y_train)
 
-# Oversampling com SMOTE
-smote = SMOTE()
-x_res, y_res = smote.fit_resample(X, y)
-
-# 7. Random Forest
-rf = RandomForestClassifier(n_estimators=50, max_depth=10, class_weight="balanced", random_state=42)
-rf.fit(x_train, y_train)
+# 8. Random Forest
+rf = RandomForestClassifier(n_estimators=100, class_weight="balanced", random_state=42)
+rf.fit(x_train_res, y_train_res)
 y_pred_rf = rf.predict(x_test)
 print("=== Random Forest Report ===")
 print(classification_report(y_test, y_pred_rf))
 
-# 8. Pipeline
-pipeline = Pipeline([
-    ("scaler", StandardScaler()),
-    ("model", LogisticRegression(max_iter=1000))
-])
-pipeline.fit(x_train, y_train)
-y_pred_pipe = pipeline.predict(x_test)
-print("=== Pipeline Logistic Regression Report ===")
-print(classification_report(y_test, y_pred_pipe))
-
-# 9. Threshold customizado
-threshold = 0.3
-y_pred_custom = (y_probs > threshold).astype(int)
-print("=== Threshold 0.3 Report ===")
-print(classification_report(y_test, y_pred_custom))
-
-# 10. XGBoost
+# 9. XGBoost
 xgb = XGBClassifier(scale_pos_weight=10, eval_metric="logloss", random_state=42)
-xgb.fit(x_train, y_train)
+xgb.fit(x_train_res, y_train_res)
 y_pred_xgb = xgb.predict(x_test)
 print("=== XGBoost Report ===")
 print(classification_report(y_test, y_pred_xgb))
@@ -107,16 +96,7 @@ plt.xlabel("Índice da Variável")
 plt.ylabel("Importância")
 plt.show()
 
-# 11. Ajuste de hiperparâmetros
-param_grid = {
-    "max_depth": [3, 5],
-    "n_estimators": [50, 100]
-}
-grid = GridSearchCV(XGBClassifier(eval_metric="logloss"), param_grid, scoring="recall", cv=3)
-grid.fit(x_train, y_train)
-print("Melhores parâmetros:", grid.best_params_)
-
-# 12. Explicabilidade com SHAP
+# 10. Explicabilidade com SHAP
 explainer = shap.Explainer(xgb)
 shap_values = explainer(x_test[:100])
 shap.plots.bar(shap_values)
