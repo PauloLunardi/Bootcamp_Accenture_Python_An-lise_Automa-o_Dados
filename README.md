@@ -2,20 +2,21 @@
 
 Repositório com exercícios e práticas em Python focados em análise e automação de dados.
 
-Conteúdo
-Manipulação de dados com pandas
-Limpeza e tratamento de dados
-Scripts de automação
-Exercícios práticos
-Tecnologias
-Python
-Pandas
-Jupyter Notebook
-Objetivo
+## Conteúdo
+  - Manipulação de dados com pandas
+  - Limpeza e tratamento de dados
+  - Scripts de automação
+  - Exercícios práticos
+  - Tecnologias
+  - Python
+  - Pandas
+  - Jupyter Notebook
+
+## Objetivo
 
 Aplicar conceitos de análise de dados e automação em cenários práticos, com foco em organização, processamento e extração de informações.
 
-Observações ⚠️
+## Observações ⚠️
 
 Cloud Clusters
   https://clients.cloudclusters.io/
