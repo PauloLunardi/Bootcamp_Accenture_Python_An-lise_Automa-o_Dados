@@ -28,6 +28,10 @@ Python
     Utilizando como (depurador Python)
     - Temas e historico estão salvos dentro das pastas [Interactive_Graphics](./Interactive_Graphics) e [Data_Clean](./Data_Clean)
 
+phpMyAdmin
+  https://phpmyadmin-c011.cloudclusters.net/
+    
+
 
 Projetos voltados para aprendizado e evolução técnica.
 
